@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 interface ModalProps {
   open: boolean;
@@ -28,20 +29,8 @@ export default function Modal({
         <h2 className="text-lg font-bold mb-2">{title}</h2>
         {description && <p className="mb-4 text-gray-600 dark:text-gray-300">{description}</p>}
         <div className="flex justify-end gap-2 mt-4">
-          <button
-            className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-            onClick={onCancel}
-            disabled={loading}
-          >
-            {cancelText}
-          </button>
-          <button
-            className="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition-colors disabled:opacity-60"
-            onClick={onConfirm}
-            disabled={loading}
-          >
-            {loading ? "Deleting..." : confirmText}
-          </button>
+          <Button variant="secondary" onClick={onCancel} disabled={loading}>{cancelText}</Button>
+          <Button onClick={onConfirm} disabled={loading}>{loading ? "Deleting..." : confirmText}</Button>
         </div>
       </div>
     </div>

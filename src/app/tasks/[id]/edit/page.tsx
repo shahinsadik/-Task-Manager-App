@@ -100,13 +100,7 @@ export default function EditTaskPage() {
 
         {/* Submit Button */}
         <div className="flex justify-end mt-6">
-          <Button
-            type="submit"
-            loading={isSubmitting}
-            className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold shadow-lg hover:scale-105 transition text-sm"
-          >
-            Update Task
-          </Button>
+          <Button type="submit" loading={isSubmitting}>Update Task</Button>
         </div>
       </form>
     </div>

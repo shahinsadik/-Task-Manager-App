@@ -83,13 +83,7 @@ export default function AddTaskPage() {
         />
 
         <div className="flex justify-end mt-6">
-          <Button
-            type="submit"
-            loading={isSubmitting}
-            className="bg-[rgb(128,90,213)] hover:bg-[rgb(107,70,193)] text-white rounded-full px-6 py-2 font-bold shadow-lg transition"
-          >
-            Add Task
-          </Button>
+          <Button type="submit" loading={isSubmitting}>Add Task</Button>
         </div>
       </form>
     </div>

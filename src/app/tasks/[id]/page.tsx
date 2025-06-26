@@ -5,6 +5,7 @@ import { fetchTask } from "../../../utils/api";
 import type { Task } from "../../../utils/types";
 import StatusBadge from "../../../components/StatusBadge";
 import dayjs from "dayjs";
+import Button from "../../../components/Button";
 
 export default function ViewTaskPage() {
   const { id } = useParams<{ id: string }>();
@@ -42,18 +43,8 @@ export default function ViewTaskPage() {
         {task.description}
       </div>
       <div className="flex gap-2 justify-end">
-        <button
-         className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold shadow-lg hover:scale-105 transition text-sm"
-          onClick={() => router.push(`/tasks/${task.id}/edit`)}
-        >
-          Edit
-        </button>
-        <button
-          className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold shadow-lg hover:scale-105 transition text-sm"
-          onClick={() => router.push("/")}
-        >
-          Back
-        </button>
+        <Button onClick={() => router.push(`/tasks/${task.id}/edit`)}>Edit</Button>
+        <Button onClick={() => router.push("/")}>Back</Button>
       </div>
     </div>
   );
