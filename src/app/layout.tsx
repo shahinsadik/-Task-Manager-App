@@ -28,15 +28,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-900 min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-purpleBg dark:bg-gray-950 min-h-screen`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="flex min-h-screen">
             <Sidebar />
             <div className="flex-1 flex flex-col min-h-screen">
               <Topbar />
-              <main className="flex-1 p-6 bg-gray-50 dark:bg-gray-900/60">
-                {children}
+              <main className="flex-1 p-6 bg-purpleBg dark:bg-gray-900/60">
+                <div className="bg-purpleBg dark:bg-gray-950 min-h-screen">{children}</div>
               </main>
             </div>
           </div>

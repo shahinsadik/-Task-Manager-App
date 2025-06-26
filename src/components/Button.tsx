@@ -13,12 +13,12 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const base =
-    "px-4 py-2 rounded-full font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent/50 disabled:opacity-60";
+    "px-4 py-2 rounded-full font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-purpleAccent/50 disabled:opacity-60";
   const variants = {
     primary:
-      "bg-accent text-white hover:bg-accent-dark",
+      "bg-purpleAccent text-white hover:bg-purpleDark",
     secondary:
-      "bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700",
+      "bg-purpleCard dark:bg-purpleDeep text-purpleDeep dark:text-purpleCard hover:bg-purpleBg dark:hover:bg-purpleDark",
   };
   return (
     <button className={`${base} ${variants[variant]}`} disabled={loading || props.disabled} {...props}>

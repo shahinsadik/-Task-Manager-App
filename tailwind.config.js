@@ -10,13 +10,13 @@ module.exports = {
         mono: ['var(--font-geist-mono)', 'monospace'],
       },
       colors: {
-        purpleBg: '#f5f0ff',       // lightest purple background
-        purpleCard: '#e6d7ff',     // card background
-        purpleAccent: '#805ad5',   // primary purple
-        purpleDark: '#6b46c1',     // hover/focus purple
-        purpleDeep: '#3c305a',     // sidebar or dark section
-        purpleBadgeBg: '#ede9fe',  // soft badge bg
-        purpleBadgeText: '#6d28d9',// badge text
+        purpleBg: "rgb(245, 240, 255)",        // Light page background
+        purpleCard: "rgb(230, 215, 255)",      // Card background
+        purpleAccent: "rgb(128, 90, 213)",     // Button / Primary
+        purpleAccentDark: "rgb(107, 70, 193)", // Button hover
+        purpleSidebar: "rgb(60, 48, 90)",      // Sidebar background
+        purpleBadgeBg: "rgb(237, 233, 254)",   // Badge background
+        purpleBadgeText: "rgb(109, 40, 217)",  // Badge label text
         info: '#3b82f6',      // Blue-500
         warning: '#fbbf24',   // Yellow-400
         danger: '#ef4444',    // Red-500

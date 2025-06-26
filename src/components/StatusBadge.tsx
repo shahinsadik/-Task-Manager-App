@@ -5,8 +5,8 @@ import type { TaskStatus } from "../utils/types";
 const statusStyles: Record<string, string> = {
   completed: "bg-green-500 text-white border border-green-500",
   pending: "bg-yellow-400 text-white border border-yellow-400",
-  'in progress': "bg-green-500 text-white border border-green-500",
-  'not started': "bg-gray-400 text-white border border-gray-400",
+  'in progress': "bg-purpleBadgeBg text-purpleBadgeText border border-purpleBadgeBg",
+  'not started': "bg-purpleBadgeBg text-purpleBadgeText border border-purpleBadgeBg",
 };
 
 export default function StatusBadge({ status }: { status: string }) {
