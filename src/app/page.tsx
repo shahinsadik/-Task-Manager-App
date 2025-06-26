@@ -138,11 +138,10 @@ export default function DashboardPage() {
           {FILTERS.map((f) => (
             <button
               key={f}
-              className={`px-4 py-1 rounded-full text-sm font-medium border transition-colors ${
-                filter === f
+              className={`px-4 py-1 rounded-full text-sm font-medium border transition-colors ${filter === f
                   ? "bg-gradient-to-r from-purple-500 to-purple-700 text-white border-purple-600 shadow-lg"
                   : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-purple-700 dark:text-purple-200"
-              }`}
+                }`}
               onClick={() => setFilter(f)}
             >
               {f.charAt(0).toUpperCase() + f.slice(1)}
@@ -165,14 +164,15 @@ export default function DashboardPage() {
         </Link>
       </div>
       {/* Task Table */}
-      <div className="overflow-x-auto border border-gray-200 dark:border-gray-800 rounded-lg bg-white dark:bg-gray-900">
+      <div className="overflow-x-auto shadow-lg border border-gray-200 dark:border-gray-800 rounded-lg bg-purple-200 dark:bg-gray-900">
         <table className="min-w-full text-sm">
           <thead>
-            <tr className="bg-pastel-purple dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
+            <tr className="bg-[purpleCard] dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
               <th className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-gray-200">Title</th>
               <th className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-gray-200">Due Date</th>
               <th className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-gray-200">Status</th>
               <th className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-gray-200">Actions</th>
+              <th className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-gray-200">View</th>
             </tr>
           </thead>
           <tbody>

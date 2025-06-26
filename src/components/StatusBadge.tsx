@@ -9,6 +9,7 @@ const statusStyles: Record<string, string> = {
   'not started': "bg-purpleBadgeBg text-purpleBadgeText border border-purpleBadgeBg",
 };
 
+export { statusStyles };
 export default function StatusBadge({ status }: { status: string }) {
   return (
     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${statusStyles[status] || 'bg-gray-300 text-gray-700'}`}>{status.charAt(0).toUpperCase() + status.slice(1)}</span>

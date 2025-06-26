@@ -120,9 +120,9 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="flex items-center gap-2 mb-10">
         <div className="bg-[rgb(128,90,213)]/10 rounded-full p-2">
-          <DownloadCloud className="text-[rgb(128,90,213)]" size={28} />
+          <DownloadCloud className="text-[rgb(128,90,213)] shadow-md" size={28} />
         </div>
-        <span className="font-extrabold text-2xl tracking-tight text-[rgb(128,90,213)]">
+        <span className="font-extrabold text-2xl  tracking-tight text-[rgb(128,90,213)]">
           Task Management
         </span>
       </div>
@@ -135,10 +135,10 @@ export default function Sidebar() {
             <Link
               key={link.label}
               href={link.href}
-              className={`flex items-center gap-3 px-4 py-2 rounded-lg font-medium transition ${
+              className={`flex items-center gap-5 px-4 py-2 rounded-lg font-medium transition ${
                 isActive
-                  ? "bg-[rgb(230,215,255)] text-[rgb(128,90,213)] shadow font-bold"
-                  : "text-[rgb(80,65,100)] dark:text-gray-400 hover:bg-[rgb(230,215,255)]/60"
+                  ? "bg-[rgb(230,215,255)] text-[rgb(128,90,213)] shadow-md font-bold"
+                  : "text-[rgb(80,65,100)] dark:text-gray-400 shadow hover:bg-[rgb(230,215,255)]/60"
               }`}
             >
               {link.icon(isActive)}

@@ -23,33 +23,33 @@ export default function ViewTaskPage() {
   }, [id]);
 
   if (loading) {
-    return <div className="max-w-xl mx-auto py-16 text-center text-gray-400">Loading...</div>;
+    return <div className="max-w-xl mx-auto py-16 text-center text-purpleAccent/50">Loading...</div>;
   }
   if (error || !task) {
-    return <div className="max-w-xl mx-auto py-16 text-center text-red-500">Task not found.</div>;
+    return <div className="max-w-xl mx-auto py-16 text-center text-danger">Task not found.</div>;
   }
 
   return (
-    <div className="max-w-xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-md p-8">
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold">{task.title}</h1>
+    <div className="max-w-full shadow-lg mx-auto bg-purpleCard dark:bg-purpleDeep rounded-2xl shadow-glass p-8">
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-purpleAccent">{task.title}</h1>
         <StatusBadge status={task.status} />
       </div>
-      <div className="mb-4 text-gray-500 dark:text-gray-400 text-sm">
+      <div className="mb-4 text-sm text-purpleAccentDark dark:text-purpleAccent/70">
         Due: {dayjs(task.dueDate).format("MMM D, YYYY")}
       </div>
-      <div className="mb-6 text-gray-700 dark:text-gray-200 whitespace-pre-line">
+      <div className="mb-6 text-gray-800 bg-purple-200 p-5 rounded-l-lg rounded-r-lg shadow-md dark:text-gray-200 whitespace-pre-line">
         {task.description}
       </div>
       <div className="flex gap-2 justify-end">
         <button
-          className="px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors"
+         className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold shadow-lg hover:scale-105 transition text-sm"
           onClick={() => router.push(`/tasks/${task.id}/edit`)}
         >
           Edit
         </button>
         <button
-          className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+          className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold shadow-lg hover:scale-105 transition text-sm"
           onClick={() => router.push("/")}
         >
           Back
@@ -57,4 +57,4 @@ export default function ViewTaskPage() {
       </div>
     </div>
   );
-} 
+}
