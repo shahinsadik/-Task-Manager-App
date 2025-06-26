@@ -1,13 +1,16 @@
 import React from "react";
 import type { TaskStatus } from "../utils/types";
 
-const statusStyles: Record<TaskStatus, string> = {
-  pending: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-  completed: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+// You can expand TaskStatus and statusStyles as needed
+const statusStyles: Record<string, string> = {
+  completed: "bg-green-500 text-white border border-green-500",
+  pending: "bg-yellow-400 text-white border border-yellow-400",
+  'in progress': "bg-green-500 text-white border border-green-500",
+  'not started': "bg-gray-400 text-white border border-gray-400",
 };
 
-export default function StatusBadge({ status }: { status: TaskStatus }) {
+export default function StatusBadge({ status }: { status: string }) {
   return (
-    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${statusStyles[status]}`}>{status.charAt(0).toUpperCase() + status.slice(1)}</span>
+    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${statusStyles[status] || 'bg-gray-300 text-gray-700'}`}>{status.charAt(0).toUpperCase() + status.slice(1)}</span>
   );
 } 
