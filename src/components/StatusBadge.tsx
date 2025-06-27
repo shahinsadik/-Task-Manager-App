@@ -1,5 +1,4 @@
 import React from "react";
-import type { TaskStatus } from "../utils/types";
 
 // You can expand TaskStatus and statusStyles as needed
 const statusStyles: Record<string, string> = {

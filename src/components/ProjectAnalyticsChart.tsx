@@ -24,7 +24,7 @@ const data = {
       data: [3, 7, 4, 6, 5, 2, 4],
       backgroundColor: "rgb(128, 90, 213)", // 💜 purpleAccent
       borderRadius: 8,
-      barThickness: 24,
+      barThickness: 12,
     },
   ],
 };

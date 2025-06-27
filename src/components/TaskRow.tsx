@@ -2,10 +2,9 @@
 
 import React from "react";
 import dayjs from "dayjs";
-import StatusBadge from "./StatusBadge";
 import type { Task, TaskStatus } from "../utils/types";
 import Link from "next/link";
-import { CheckCircle2, Clock, Eye, Pencil, Trash2 } from "lucide-react";
+import { CheckCircle2, Clock, Pencil, Trash2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { updateTask } from "../utils/api";
 import toast from "react-hot-toast";

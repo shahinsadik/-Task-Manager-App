@@ -1,6 +1,6 @@
+
 import React from "react";
 import { CalendarCheck2 } from "lucide-react";
-import Button from "./Button";
 
 export default function RemindersWidget() {
   return (
@@ -21,7 +21,9 @@ export default function RemindersWidget() {
         </div>
       </div>
 
-      <Button className="mt-4">Start Meeting</Button>
+      <button className="mt-4 px-4 py-2 rounded-full bg-[rgb(128,90,213)] hover:bg-[rgb(107,70,193)] text-white font-semibold text-sm shadow transition">
+        Start Meeting
+      </button>
     </div>
   );
 }

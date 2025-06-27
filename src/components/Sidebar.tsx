@@ -48,7 +48,7 @@ const navLinks = [
     ),
   },
   {
-    href: "#",
+    href: "/calendar",
     label: "Calendar",
     icon: (active: boolean) => (
       <Calendar
@@ -58,7 +58,7 @@ const navLinks = [
     ),
   },
   {
-    href: "#",
+    href: "/analytics",
     label: "Analytics",
     icon: (active: boolean) => (
       <BarChart2

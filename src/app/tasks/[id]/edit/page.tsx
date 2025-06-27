@@ -42,7 +42,12 @@ export default function EditTaskPage() {
       .catch(() => toast.error("Task not found"));
   }, [id, setValue]);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: {
+    title: string;
+    description: string;
+    status: TaskStatus;
+    dueDate: string;
+  }) => {
     try {
       await updateTask(id, data);
       toast.success("Task updated");

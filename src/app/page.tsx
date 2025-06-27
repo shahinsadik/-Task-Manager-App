@@ -1,17 +1,19 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { fetchTasks, deleteTask } from "../utils/api";
-import type { Task, TaskStatus } from "../utils/types";
+import type { Task } from "../utils/types";
 import TaskRow from "../components/TaskRow";
 import toast, { Toaster } from "react-hot-toast";
 import Modal from "../components/Modal";
 import Loader from "../components/Loader";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { PlusCircle } from "lucide-react";
+import { PlusCircle, Calendar, BarChart3 } from "lucide-react";
 import ProjectAnalyticsChart from "../components/ProjectAnalyticsChart";
 import ProjectProgressDonut from "../components/ProjectProgressDonut";
 import RemindersWidget from "../components/RemindersWidget";
+import CalendarWidget from "../components/CalendarWidget";
+import AnalyticsWidget from "../components/AnalyticsWidget";
 
 const FILTERS = ["all", "pending", "completed"] as const;
 type Filter = typeof FILTERS[number];
@@ -109,7 +111,7 @@ export default function DashboardPage() {
         loading={deleting}
       />
       {/* Stat Cards and Add Task Button */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 ">
         <div className="bg-gradient-to-br from-purple-400 to-purple-600 backdrop-blur-md shadow-glass border border-white/20 dark:border-white/10 rounded-2xl p-6 flex flex-col items-start">
           <div className="text-3xl font-bold text-purple-700 dark:text-purple-200 drop-shadow">{stats.total}</div>
           <div className="text-sm text-purple-900 dark:text-purple-200 font-medium mt-2">Total Tasks</div>
@@ -128,13 +130,21 @@ export default function DashboardPage() {
         </div>
       </div>
       {/* Analytics/Widgets Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        <ProjectAnalyticsChart />
-        <RemindersWidget />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 mb-8">
+       
         <ProjectProgressDonut />
+        <CalendarWidget tasks={tasks} />
+        <AnalyticsWidget tasks={tasks} />
+        
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+       <ProjectAnalyticsChart />
+       <RemindersWidget />
+       </div>
+       
       </div>
       <div className="flex justify-between items-center mb-4">
         <div className="flex gap-2 items-center">
+         
           {FILTERS.map((f) => (
             <button
               key={f}
@@ -156,6 +166,16 @@ export default function DashboardPage() {
               <option key={opt.value} value={opt.value}>{`Sort: ${opt.label}`}</option>
             ))}
           </select>
+          <Link href="/calendar">
+            <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-purple-700 dark:text-purple-200 text-sm">
+              <Calendar size={18} /> Calendar View
+            </button>
+          </Link>
+          <Link href="/analytics">
+            <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-purple-700 dark:text-purple-200 text-sm">
+              <BarChart3 size={18} /> Analytics
+            </button>
+          </Link>
         </div>
         <Link href="/tasks/new">
           <button className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold shadow-lg hover:scale-105 transition text-sm">

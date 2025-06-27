@@ -28,7 +28,12 @@ export default function AddTaskPage() {
     },
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: {
+    title: string;
+    description: string;
+    status: TaskStatus;
+    dueDate: string;
+  }) => {
     try {
       await createTask(data);
       toast.success("Task created");

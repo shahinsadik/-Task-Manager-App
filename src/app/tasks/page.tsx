@@ -6,6 +6,9 @@ import TaskRow from "../../components/TaskRow";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "../../components/Loader";
 import { AnimatePresence } from "framer-motion";
+import { Calendar } from "lucide-react";
+import Link from "next/link";
+import { BarChart3 } from "lucide-react";
 
 const FILTERS: (TaskStatus | "all")[] = ["all", "pending", "completed", "in progress", "not started"];
 const filterColors: Record<string, string> = {
@@ -32,7 +35,7 @@ export default function TasksPage() {
       .finally(() => setLoading(false));
   }, []);
 
-  let filteredTasks =
+  const filteredTasks =
     filter === "all"
       ? tasks
       : tasks.filter((t) => t.status === filter);
@@ -53,7 +56,23 @@ export default function TasksPage() {
   return (
     <div className="max-w-5xl bg-purpleBg mx-auto mt-8 shadow-lg p-5">
       <Toaster position="top-right" />
-      <div className="text-2xl font-bold mb-6">All Tasks</div>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-extrabold text-[rgb(128,90,213)]">All Tasks</h1>
+        <div className="flex gap-2">
+          <Link href="/analytics">
+            <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-500 to-yellow-700 text-white rounded-lg font-semibold shadow-lg hover:scale-105 transition-transform">
+              <BarChart3 size={18} />
+              Analytics
+            </button>
+          </Link>
+          <Link href="/calendar">
+            <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500 to-pink-700 text-white rounded-lg font-semibold shadow-lg hover:scale-105 transition-transform">
+              <Calendar size={18} />
+              Calendar View
+            </button>
+          </Link>
+        </div>
+      </div>
       {/* Filter Buttons */}
       <div className="flex gap-2 mb-4">
         {FILTERS.map((f) => (
